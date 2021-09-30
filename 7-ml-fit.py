@@ -16,6 +16,10 @@ data = pd.read_csv(city_pop_file_url)
 model = LinearRegression(fit_intercept=True)
 model.fit(data[['x']], data['y'])
 
+# Results
+print(model.coef_[0])
+print(model.intercept_)
+
 # Prediction
 x_fit = DataFrame([data['x'].min(), data['x'].max()])
 y_pred = model.predict(x_fit)
@@ -26,3 +30,7 @@ plot.plot(x_fit[0], y_pred, linestyle=":")
 
 fig = plot.get_figure()
 fig.savefig("x-y-scatter-predicted")
+
+# Other
+print(data.ndim)
+print(data.shape)
