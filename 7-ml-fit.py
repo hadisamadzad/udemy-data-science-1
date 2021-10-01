@@ -26,10 +26,9 @@ y_pred = model.predict(x_fit)
 
 # Visualization
 plot = data.plot.scatter('x', 'y')
-plot.plot(x_fit[0], y_pred, linestyle=":")
+plot.plot(x_fit[0], y_pred, c='green', linestyle=":")
 
-fig = plot.get_figure()
-fig.savefig("x-y-scatter-predicted")
+plot.get_figure().savefig("x-y-scatter-predicted")
 
 # Other
 print(data.ndim)
